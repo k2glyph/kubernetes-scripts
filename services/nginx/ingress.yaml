@@ -12,7 +12,7 @@ metadata:
     certmanager.k8s.io/acme-http01-edit-in-place: "true"
 spec:
   rules:
-    - host: cust3.104.154.19.21.xip.io
+    - host: cust3.104.154.19.21.xip.moss.sh
       http:
         paths:
           - backend:
@@ -21,5 +21,5 @@ spec:
             path: /
   tls:
     - hosts:
-        - "cust3.104.154.19.21.xip.io"
+        - "cust3.104.154.19.21.xip.moss.sh"
       secretName: nginx-tls
