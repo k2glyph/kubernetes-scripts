@@ -1,5 +1,5 @@
 kind: deployment
-apiVersion: v1
+apiVersion: v1beta1
 metadata:
   name: jenkins-docker-pipeline
   labels:
