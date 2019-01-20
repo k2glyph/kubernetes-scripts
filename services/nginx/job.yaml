@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: letsencrypt
+  labels:
+    app: letsencrypt
+spec:
+  template:
+    metadata:
+      name: letsencrypt
+      labels:
+        app: letsencrypt
+    spec:
+      containers:
+      - image: sjenning/kube-nginx-letsencrypt:0.8.1-1
+        name: letsencrypt
+        imagePullPolicy: Always
+        ports:
+        - name: letsencrypt
+          containerPort: 80
+        env:
+        - name: DOMAINS
+          value: cust3.104.154.19.21.xip.io,www.cust3.104.154.19.21.xip.io
+        - name: EMAILs
+          value: testcicd2019@gmail.com
+        - name: SECRET
+          value: nginx
+        - name: DEPLOYMENT
+          value: nginx-app
+      restartPolicy: Never

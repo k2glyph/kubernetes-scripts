@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx
+spec:
+  tls:
+  - hosts:
+    - cust3.104.154.19.21.xip.io
+    secretName: nginx
+  rules:
+  - host: cust3.104.154.19.21.xip.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nginx-app
+          servicePort: 80
+      - path: /.well-known
+        backend:
+          serviceName: letsencrypt
+          servicePort: 80
