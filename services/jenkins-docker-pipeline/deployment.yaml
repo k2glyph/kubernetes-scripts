@@ -15,5 +15,5 @@ spec:
         apps: jenkins-docker-pipeline
     spec:
       containers:
-        - name: jenkins-docker-pipeline-container
+        - name: jenkins-docker-pipeline
           image: "gcr.io/imposing-pager-229110/jenkins-docker-pipeline:25"
