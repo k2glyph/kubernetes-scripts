@@ -8,6 +8,11 @@ metadata:
     traefik.frontend.passHostHeader: "false"
     traefik.frontend.priority: "1"
 spec:
-  backend:
-    serviceName: jenkins-docker-pipeline
-    servicePort: 3000
+  rules:
+  - host: cust1.104.154.19.21.xip.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: jenkins-docker-pipeline
+          servicePort: 3000
