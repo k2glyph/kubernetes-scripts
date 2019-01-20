@@ -7,7 +7,7 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: exampleService
+              serviceName: nginx-app
               servicePort: 80
             path: /
   tls:
