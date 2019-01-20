@@ -1,23 +1,18 @@
-
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: nginx-app-ingress
-  annotations:
     kubernetes.io/ingress.class: traefik
-    kubernetes.io/tls-acme: "true"
-    traefik.frontend.passHostHeader: "false"
-    traefik.frontend.priority: "1"
+    # Add to generate certificates for this ingress
+    kubernetes.io/tls-acme: 'true'
 spec:
   rules:
-  - host: cust3.104.154.19.21.xip.io
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: nginx-app
-          servicePort: 80
+    - host: cust3.104.154.19.21.xip.io
+      http:
+        paths:
+          - backend:
+              serviceName: exampleService
+              servicePort: 80
+            path: /
   tls:
-  - secretName: letsencrypt-staging
-    hosts: 
-    - cust3.104.154.19.21.xip.io
+    # With this configuration kube-lego will generate a secret in namespace foo called `example-tls`
+    # for the URL `www.example.com`
+    - hosts:
+        - "cust3.104.154.19.21.xip.io"
+      secretName: example-tls
