@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
         - name: node-app
-          image: "gcr.io/imposing-pager-229110/node-app:25"
+          image: "gcr.io/imposing-pager-229110/node-app:1"
