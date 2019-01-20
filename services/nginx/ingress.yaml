@@ -9,7 +9,7 @@ metadata:
     kubernetes.io/tls-acme: 'true'
 spec:
   rules:
-    - host: cust3.104.154.19.21.xip.moss.shs
+    - host: cust3.104.154.19.21.xip.moss.sh
       http:
         paths:
           - backend:
