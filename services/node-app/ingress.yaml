@@ -1,0 +1,18 @@
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: node-app-ingress
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.frontend.passHostHeader: "false"
+    traefik.frontend.priority: "1"
+spec:
+  rules:
+  - host: node-mongo.104.154.19.21.xip.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: node-app
+          servicePort: 3000

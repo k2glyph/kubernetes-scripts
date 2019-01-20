@@ -17,5 +17,5 @@ config = {
    }
  ]
 }
-rs.initialize(config)
+rs.initiate(config)
 ```
