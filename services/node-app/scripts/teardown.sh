@@ -26,7 +26,3 @@ for i in 1 2 3
 do
     gcloud -q compute disks delete pd-ssd-disk-$i
 done
-
-# Delete whole Kubernetes cluster (including its VM instances)
-gcloud -q container clusters delete "gke-mongodb-demo-cluster"
-

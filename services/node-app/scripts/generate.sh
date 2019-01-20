@@ -1,11 +1,4 @@
 #!/bin/sh
-##
-# Script to deploy a Kubernetes project with a StatefulSet running a MongoDB Replica Set, to GKE.
-##
-
-# Create new GKE Kubernetes cluster (using host node VM images based on Ubuntu
-# rather than ChromiumOS default & also use slightly larger VMs than default)
-gcloud container clusters create "gke-mongodb-demo-cluster" --image-type=UBUNTU --machine-type=n1-standard-2
 
 # Configure host VM using daemonset to disable hugepages
 kubectl apply -f ../resources/hostvm-node-configurer-daemonset.yaml
@@ -19,7 +12,7 @@ kubectl apply -f ../resources/hostvm-node-configurer-daemonset.yaml
 echo "Creating GCE disks"
 for i in 1 2 3
 do
-    gcloud compute disks create --size 10GB --type pd-ssd pd-ssd-disk-$i
+    gcloud compute disks create --size 5GB --type pd-ssd pd-ssd-disk-$i
 done
 sleep 3
 
