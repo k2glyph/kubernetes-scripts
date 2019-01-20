@@ -17,6 +17,6 @@ spec:
         backend:
           serviceName: nginx-app
           servicePort: 80
-   tls:
+  tls:
   - secretName: nginx-app-tls-cert
     hosts: cust3.104.154.19.21.xip.io
