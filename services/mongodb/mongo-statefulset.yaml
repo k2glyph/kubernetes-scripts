@@ -19,7 +19,7 @@ metadata:
   name: mongo
 spec:
   serviceName: "mongo"
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
@@ -34,6 +34,8 @@ spec:
             - mongod
             - "--replSet"
             - rs0
+            - "--bind_ip" 
+            - 0.0.0.0 
             - "--smallfiles"
             - "--noprealloc"
           ports:
