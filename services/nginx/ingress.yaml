@@ -1,25 +1,23 @@
+
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: nginx
+  name: jenkins-docker-pipeline-ingress
   annotations:
-    kubernetes.io/ingress.classs: traefik
+    kubernetes.io/ingress.class: traefik
+    kubernetes.io/tls-acme: "true"
     traefik.frontend.passHostHeader: "false"
     traefik.frontend.priority: "1"
 spec:
-  tls:
-  - hosts:
-    - cust3.104.154.19.21.xip.io
-    secretName: nginx
   rules:
   - host: cust3.104.154.19.21.xip.io
     http:
       paths:
       - path: /
         backend:
-          serviceName: nginx-app
-          servicePort: 80
-      - path: /.well-known
-        backend:
-          serviceName: letsencrypt
-          servicePort: 80
+          serviceName: jenkins-docker-pipeline
+          servicePort: 3000
+tls:
+- secretName: nginx-tls-cert
+    hosts:
+    - cust3.104.154.19.21.xip.io
