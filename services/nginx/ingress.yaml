@@ -5,8 +5,11 @@ metadata:
   name: nginx-app-ingress
   annotations:    
     kubernetes.io/ingress.class: traefik
-    # Add to generate certificates for this ingress
-    kubernetes.io/tls-acme: 'true'
+    # # Add to generate certificates for this ingress
+    # kubernetes.io/tls-acme: 'true'
+    kubernetes.io/ingress.global-static-ip-name: nginx-app-ingress
+    certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+    certmanager.k8s.io/acme-http01-edit-in-place: "true"
 spec:
   rules:
     - host: cust3.104.154.19.21.xip.io
