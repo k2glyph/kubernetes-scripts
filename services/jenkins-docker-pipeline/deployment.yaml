@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        apps: jenkins-docker-pipeline
+        app: jenkins-docker-pipeline
     spec:
       containers:
         - name: jenkins-docker-pipeline
