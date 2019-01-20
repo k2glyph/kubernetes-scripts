@@ -9,7 +9,7 @@ metadata:
     traefik.frontend.priority: "1"
 spec:
   rules:
-  - host: node-mongo.104.154.19.21.xip.io
+  - host: cust2.104.154.19.21.xip.io
     http:
       paths:
       - path: /
