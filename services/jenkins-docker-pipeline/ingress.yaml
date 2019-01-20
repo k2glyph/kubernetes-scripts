@@ -1,0 +1,13 @@
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jenkins-docker-pipeline-ingress
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.frontend.passHostHeader: "false"
+    traefik.frontend.priority: "1"
+spec:
+  backend:
+    serviceName: jenkins-docker-pipeline
+    servicePort: 3000

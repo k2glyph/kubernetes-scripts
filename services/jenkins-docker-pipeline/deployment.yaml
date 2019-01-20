@@ -1,0 +1,19 @@
+kind: deployment
+apiVersion: v1
+metadata:
+  name: jenkins-docker-pipeline
+  labels:
+    app: jenkins-docker-pipeline
+spec:
+  replics: 1
+  selector:
+    matchlabels:
+      app: jenkins-docker-pipeline
+  template:
+    metadata:
+      labels:
+        apps: jenkins-docker-pipeline
+    spec:
+      containers:
+        - name: jenkins-docker-pipeline-container
+          image: "gcr.io/imposing-pager-229110/jenkins-docker-pipeline:25"
