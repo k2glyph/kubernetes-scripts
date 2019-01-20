@@ -9,7 +9,7 @@ metadata:
     kubernetes.io/tls-acme: 'true'
 spec:
   rules:
-    - host: cust3.104.154.19.21.xip.io
+    - host: cust3.104.154.19.21.nip.io
       http:
         paths:
           - backend:
@@ -17,8 +17,6 @@ spec:
               servicePort: 80
             path: /
   tls:
-    # With this configuration kube-lego will generate a secret in namespace foo called `example-tls`
-    # for the URL `www.example.com`
     - hosts:
-        - "cust3.104.154.19.21.xip.io"
-      secretName: example-tls
+        - "cust3.104.154.19.21.nip.io"
+      secretName: nginx-tls
