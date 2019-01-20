@@ -11,13 +11,13 @@ metadata:
 spec:
   rules:
   - host: cust3.104.154.19.21.xip.io
-    https:
+    http:
       paths:
       - path: /
         backend:
           serviceName: nginx-app
           servicePort: 80
   tls:
-  - secretName: nginx-app-tls-cert
+  - secretName: letsencrypt-staging
     hosts: 
     - cust3.104.154.19.21.xip.io
