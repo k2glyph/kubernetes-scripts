@@ -2,7 +2,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: jenkins-docker-pipeline-ingress
+  name: nginx-app-ingress
   annotations:
     kubernetes.io/ingress.class: traefik
     kubernetes.io/tls-acme: "true"
@@ -15,7 +15,7 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: jenkins-docker-pipeline
+          serviceName: nginx-app
           servicePort: 3000
 tls:
 - secretName: nginx-tls-cert
