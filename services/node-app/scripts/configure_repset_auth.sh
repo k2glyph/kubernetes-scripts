@@ -1,12 +1,4 @@
 #!/bin/bash
-##
-# Script to connect to the first Mongod instance running in a container of the
-# Kubernetes StatefulSet, via the Mongo Shell, to initalise a MongoDB Replica
-# Set and create a MongoDB admin user.
-#
-# IMPORTANT: Only run this once all 3 StatefulSet mongod pods are shown with
-# status running (to see pod status run: $ kubectl get all)
-##
 
 # Check for password argument
 if [[ $# -eq 0 ]] ; then
