@@ -9,10 +9,6 @@ metadata:
     traefik.frontend.passHostHeader: "false"
     traefik.frontend.priority: "1"
 spec:
-  # tls:
-  # - secretName: nginx-app-tls-cert
-  #   hosts:
-  #   - cust3.104.154.19.21.xip.io
   rules:
   - host: cust3.104.154.19.21.xip.io
     http:
@@ -21,3 +17,6 @@ spec:
         backend:
           serviceName: nginx-app
           servicePort: 80
+   tls:
+  - secretName: nginx-app-tls-cert
+    hosts: cust3.104.154.19.21.xip.io
