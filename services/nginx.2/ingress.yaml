@@ -1,0 +1,25 @@
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-app-ingress
+  annotations:    
+    kubernetes.io/ingress.class: traefik
+    # # Add to generate certificates for this ingress
+    kubernetes.io/tls-acme: 'true'
+    kubernetes.io/ingress.global-static-ip-name: nginx-app/-ingress
+    certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+    certmanager.k8s.io/acme-http01-edit-in-place: "true"
+spec:
+  rules:
+    - host: cust4.ipradr.com
+      http:
+        paths:
+          - backend:
+              serviceName: nginx-app
+              servicePort: 80
+            path: /
+  tls:
+    - hosts:
+        - "cust4.ipradr.com"
+      secretName: nginx-tls
