@@ -8,9 +8,9 @@ metadata:
     kubernetes.io/ingress.class: traefik
     # # Add to generate certificates for this ingress
     # kubernetes.io/tls-acme: 'true'
-    kubernetes.io/ingress.global-static-ip-name: nginx-app-ingress
-    certmanager.k8s.io/cluster-issuer: letsencrypt-prod
-    certmanager.k8s.io/acme-http01-edit-in-place: "true"
+    kubernetes.io/ingress.global-static-ip-name: nginx-app/-ingress
+    # certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+    # certmanager.k8s.io/acme-http01-edit-in-place: "true"
 spec:
   rules:
     - host: cust3.ipradr.com
@@ -20,7 +20,7 @@ spec:
               serviceName: nginx-app
               servicePort: 80
             path: /
-  tls:
-    - hosts:
-        - "cust3.ipradr.com"
-      secretName: nginx-tls
+  # tls:
+  #   - hosts:
+  #       - "cust3.ipradr.com"
+  #     secretName: nginx-tls
