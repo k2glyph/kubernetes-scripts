@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nginx-app
-    namespace: cust3-namespace
+  namespace: cust3-namespace
 spec:
   selector:
     app: nginx-app
