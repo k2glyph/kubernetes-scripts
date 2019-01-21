@@ -3,6 +3,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: nginx-app-ingress
+  namespace: cust3-namespace
   annotations:    
     kubernetes.io/ingress.class: traefik
     # # Add to generate certificates for this ingress
