@@ -22,4 +22,4 @@ spec:
   tls:
     - hosts:
         - "cust4.ipradr.com"
-      secretName: nginx-tls
+      secretName: nginx-tls-cert
