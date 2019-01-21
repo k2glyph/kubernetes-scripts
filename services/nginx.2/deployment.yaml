@@ -2,7 +2,6 @@ kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
   name: nginx-app
-  namespace: cust3-namespace
   labels:
     app: nginx-app
 spec:
