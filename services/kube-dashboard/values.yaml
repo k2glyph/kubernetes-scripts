@@ -64,7 +64,7 @@ service:
   ## Kubernetes Dashboard Service annotations
   ##
   ## For GCE ingress, the following annotation is required:
-  service.alpha.kubernetes.io/app-protocols: '{"https":"HTTPS"}' if enableInsecureLogin=false
+  #service.alpha.kubernetes.io/app-protocols: '{"https":"HTTPS"}' if enableInsecureLogin=false
   ## or
   ## service.alpha.kubernetes.io/app-protocols: '{"http":"HTTP"}' if enableInsecureLogin=true
   annotations: {}
