@@ -11,6 +11,6 @@ spec:
   acme:
     config: 
       - http01:
-          ingress: kube-dashboard-kubernetes-dashboard
+          ingress: nginx
         domains:
           - kube-dashboard.ipradr.com
