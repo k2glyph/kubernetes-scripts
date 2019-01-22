@@ -64,7 +64,7 @@ service:
   ## Kubernetes Dashboard Service annotations
   ##
   ## For GCE ingress, the following annotation is required:
-  ## service.alpha.kubernetes.io/app-protocols: '{"https":"HTTPS"}' if enableInsecureLogin=false
+  service.alpha.kubernetes.io/app-protocols: '{"https":"HTTPS"}' if enableInsecureLogin=false
   ## or
   ## service.alpha.kubernetes.io/app-protocols: '{"http":"HTTP"}' if enableInsecureLogin=true
   annotations: {}
@@ -85,7 +85,7 @@ resources:
 ingress:
   ## If true, Kubernetes Dashboard Ingress will be created.
   ##
-  enabled: false
+  enabled: true
 
   ## Kubernetes Dashboard Ingress annotations
   ##
@@ -110,15 +110,15 @@ ingress:
   ## Must be provided if Ingress is enabled
   ##
   hosts:
-     - dashboard.35.238.203.197.xip.io
+     - kube-dashboard.ipradr.com
 
   ## Kubernetes Dashboard Ingress TLS configuration
   ## Secrets must be manually created in the namespace
   ##
-  # tls:
-  #   - secretName: kubernetes-dashboard-tls
-  #     hosts:
-  #       - kubernetes-dashboard.domain.com
+  tls:
+    - secretName: kube-dashboard-tls-cert
+      hosts:
+        - kube-dashboard.ipradr.com
 
 rbac:
   # Specifies whether RBAC resources should be created

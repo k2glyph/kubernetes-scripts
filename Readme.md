@@ -19,3 +19,7 @@ config = {
 }
 rs.initiate(config)
 ```
+
+kubectl create clusterrolebinding myname-cluster-admin-binding \
+  --clusterrole=cluster-admin \
+  --user=testcicd2019@gmail.com
