@@ -15,8 +15,8 @@ annotations: {}
 ## Here labels can be added to the kubernetes dashboard deployment
 ##
 labels: {}
-# kubernetes.io/cluster-service: "true"
-# kubernetes.io/name: "Kubernetes Dashboard"
+kubernetes.io/cluster-service: "true"
+kubernetes.io/name: "Kubernetes Dashboard"
 
 
 ## Enable possibility to skip login
@@ -72,7 +72,7 @@ service:
   ## Here labels can be added to the Kubernetes Dashboard service
   ##
   labels: {}
-  # kubernetes.io/name: "Kubernetes Dashboard"
+  kubernetes.io/name: "Kubernetes Dashboard"
 
 resources:
   limits:
