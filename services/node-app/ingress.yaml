@@ -4,7 +4,7 @@ kind: Ingress
 metadata:
   name: node-app-ingress
   annotations:
-    kubernetes.io/ingress.class: traefik
+          #kubernetes.io/ingress.class: public
     traefik.frontend.passHostHeader: "false"
     traefik.frontend.priority: "1"
     kubernetes.io/ingress.allow-http: "true"
@@ -23,4 +23,4 @@ spec:
   tls:
     - hosts:
         - cust4.ipradr.com
-      secretName: nginx-tls-cert
+      secretName: nginx-tls-cert-prod

@@ -2,11 +2,11 @@
 apiVersion: certmanager.k8s.io/v1alpha1
 kind: Certificate
 metadata:
-  name: nginx-tls-cert
+  name: nginx-tls-cert-prod
 spec:
-  secretName: nginx-tls-cert
+  secretName: nginx-tls-cert-prod
   issuerRef:
-    name: letsencrypt-staging
+    name: letsencrypt-prod
   commonName: cust4.ipradr.com
   acme:
     config: 

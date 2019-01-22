@@ -1,8 +1,9 @@
 # create Traefik cluster role
+---
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1beta1
 metadata:
- name: traefik-ingress-controller
+  name: traefik-ingress-controller
 rules:
   - apiGroups:
       - ""
@@ -23,14 +24,6 @@ rules:
       - list
       - watch
 ---
-# create Traefik service account
-kind: ServiceAccount
-apiVersion: v1
-metadata:
-  name: traefik-ingress-controller
-  namespace: default
----
-# bind role with service account
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1beta1
 metadata:
@@ -42,4 +35,4 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: traefik-ingress-controller
-  namespace: default
+  namespace: kube-system
