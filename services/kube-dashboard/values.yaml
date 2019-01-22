@@ -42,10 +42,10 @@ nodeSelector: {}
 
 ## List of node taints to tolerate (requires Kubernetes >= 1.6)
 tolerations: []
-#  - key: "key"
-#    operator: "Equal|Exists"
-#    value: "value"
-#    effect: "NoSchedule|PreferNoSchedule|NoExecute"
+ - key: "key"
+   operator: "Equal|Exists"
+   value: "value"
+   effect: "NoSchedule|PreferNoSchedule|NoExecute"
 
 ## Affinity
 ## ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
@@ -91,13 +91,13 @@ ingress:
   ##
   annotations:
     kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: 'true'
+    kubernetes.io/tls-acme: 'true'
   ## If you plan to use TLS backend with enableInsecureLogin set to false
   ## (default), you need to uncomment the below.
   ## If you use ingress-nginx < 0.21.0
   #   nginx.ingress.kubernetes.io/secure-backends: "true"
   ## if you use ingress-nginx >= 0.21.0
-    # nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 
 
   ## Kubernetes Dashboard Ingress paths
@@ -115,10 +115,10 @@ ingress:
   ## Kubernetes Dashboard Ingress TLS configuration
   ## Secrets must be manually created in the namespace
   ##
-  # tls:
-  #   - secretName: kube-dashboard-tls-cert
-  #     hosts:
-  #       - kube-dashboard.ipradr.com
+  tls:
+    - secretName: kube-dashboard-tls-cert
+      hosts:
+        - kube-dashboard.ipradr.com
 
 rbac:
   # Specifies whether RBAC resources should be created
