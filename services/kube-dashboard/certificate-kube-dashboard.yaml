@@ -1,0 +1,16 @@
+---
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: kube-dashboard-cert
+spec:
+  secretName: kube-dashboard-tls-cert
+  issuerRef:
+    name: letsencrypt-prod
+  commonName: kube-dashboard.ipradr.com
+  acme:
+    config: 
+      - http01:
+          ingress: kube-dashboard
+        domains:
+          - kube-dashboard.ipradr.com
