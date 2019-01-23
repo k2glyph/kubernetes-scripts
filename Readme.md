@@ -23,3 +23,6 @@ rs.initiate(config)
 kubectl create clusterrolebinding myname-cluster-admin-binding \
   --clusterrole=cluster-admin \
   --user=testcicd2019@gmail.com
+
+  ## Disable Gke loadbalancer
+  gcloud container clusters update  standard-cluster-1  --update-addons=HttpLoadBalancing=DISABLED --zone=us-central1-a
