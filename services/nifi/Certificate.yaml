@@ -1,0 +1,16 @@
+---
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: nifi-cert
+spec:
+  secretName: tls-nifi
+  issuerRef:
+    name: letsencrypt-prod
+  commonName: nifi.ipradr.com
+  acme:
+    config: 
+      - http01:
+          ingress: nifi-ingress
+        domains:
+          - nifi.ipradr.com
